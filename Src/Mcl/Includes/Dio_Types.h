@@ -1,25 +1,9 @@
-/**********************************************************
-*   FILE DESCRIPTION
-*----------------------------------------------------------
-*     \file   Dio_Types.h
-*       \brief
-*       \details
-*
-*
-***********************************************************
-***********************************************************/
-/***********************************************************
- * GUARD
- * ********************************************************/
+
 #ifndef DIO_TYPES_H
 #define DIO_TYPES_H
-/**********************************************************
-*   INCLUDES
-***********************************************************/
+
 #include "MCU_HW.h"
-/***********************************************************
-* LOCL MACROS CONSTANT/FUNCTION
-***********************************************************/
+
 typedef enum
 {
     PA_1=0,
@@ -92,41 +76,11 @@ typedef enum {
 
 typedef unsigned char Dio_PortLevelType ;
 
-/***********************************************************
-*   LOCAL DATA 
-***********************************************************/
 
-/***********************************************************
-*   GLOBAL DATA
-***********************************************************/
-
-/***********************************************************
-*   LOCAL FUNCTIONS PROTOTYPE
-***********************************************************/
 Dio_LevelType Dio_ReadChannal (Dio_ChannelType ChannalId);
 void Dio_WriteChannal (Dio_ChannelType ChannalId,Dio_LevelType Level);
 Dio_PortLevelType Dio_ReadPort (Dio_PortType PortId);
 void Dio_WritePort (Dio_PortType PortId ,Dio_PortLevelType Level);
 Dio_LevelType Dio_FlipChannal (Dio_ChannelType ChannalId);
-/***********************************************************
-*   LOCAL FUNCTIONS
-***********************************************************/
 
-/***********************************************************
-*   GLOBAL FUNCTIONS
-***********************************************************/
-
-/***********************************************************
-*   \SYNTAX            :   Std_ReturnType  FunctionName (AnyType parameterName)
-*   \Description       :    Descripe this service
-*   \Sync\Async        :    synchronous
-*   \Reenteracy        :    Non Reenterant
-*   \Parameters (in)   :    parameterName   Parameter Description
-*   \Parameters (out)  :    None
-*   \Retern value      :    Std_ReternType  E_OK
-*                                           E_NOT_OK
-***********************************************************/
 #endif
-/***********************************************************
-*   END OF FILE: FileName.c
-***********************************************************/
