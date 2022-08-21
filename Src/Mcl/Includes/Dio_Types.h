@@ -70,8 +70,8 @@ typedef enum {
 }Dio_PortType ;
 
 typedef enum {
-    low,
-    high
+    low=0UL,
+    high=1UL
 }Dio_LevelType;
 
 typedef unsigned char Dio_PortLevelType ;

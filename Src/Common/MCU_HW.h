@@ -52,6 +52,8 @@ typedef struct
 
 
 
+#define STCTRL																PD(0xE000E010)
+#define MPUCTRL																PD(0xE000ED94)
 
 
 
@@ -102,13 +104,45 @@ typedef struct
     uint32 :4;
 } RCC_FIELDS;
 
-typedef union
+typedef union RCC_REG
 {
     uint32 REG;
     RCC_FIELDS Bits;
 } RCC_REG;
 
 #define RCCREG 													((volatile RCC_REG *)(0x400FE000+ 0x060))
+
+
+
+typedef struct
+{
+    uint32  :4;//
+    uint32 OSCSRC2 :3;//
+    uint32  :4;//	
+    uint32 BYPASS2 :1;//
+    uint32 :1;
+    uint32 PWRDN2 :1;//
+	  uint32 USBPWRDN :1;//
+    uint32 :1;
+	
+    uint32  :6;//
+    uint32 SYSDIV2LSB :1;//
+    uint32 SYSDIV2:6;
+    uint32 :1;//
+    uint32 DIV400 :1;//
+    uint32 USERCC2 :1;//
+} RCC2_FIELDS;
+
+
+typedef union RCC2_REG
+{
+    uint32 REG;
+    RCC2_FIELDS Bits;
+} RCC2_REG;
+
+#define RCC2REG 													((volatile RCC2_REG *)(0x400FE000+ 0x070))
+
+
 
 
 

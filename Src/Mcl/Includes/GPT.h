@@ -4,7 +4,7 @@
 #define ___GPT_H__
  
 
-
+#include "Std_Types.h"
 #include "GPT_Types.h"
 
 void Gpt_Init(const Gpt_ConfigType * TimerConfig);
@@ -16,7 +16,7 @@ Gpt_ValueType Gpt_GetTimeElapsed(Gpt_ChannelType CH);
 Gpt_ValueType Gpt_GetTimeRemaining(Gpt_ChannelType CH);
 uint8 GPT_GetPredefTimerValue(Gpt_PredefTimerType PredefTimer ,uint32 * TimerValuePtr);
 
-extern const Gpt_ConfigType TimerConfig [5];
+extern const Gpt_ConfigType TimeConfig [5];
 static GPT_REGISTERS* T_arr[12] = {GPT_0,GPT_1,GPT_2,GPT_3,GPT_4,GPT_5,GPT_6,GPT_7,GPT_8,GPT_9,GPT_10,GPT_11};
 
 

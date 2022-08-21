@@ -10,7 +10,7 @@
 
 #include "GPT_Cfg.h"
 
-
+#include "Std_Types.h"
 
 
 typedef enum
@@ -40,7 +40,7 @@ typedef enum {
 
 typedef enum
 {
-    GPT_PREDEF_TIMER_100US_32BIT=1,
+    GPT_PREDEF_TIMER_100US_32BIT,
     GPT_PREDEF_TIMER_1US_16BIT,
     GPT_PREDEF_TIMER_1US_24BIT,
     GPT_PREDEF_TIMER_1US_32BIT
@@ -53,8 +53,6 @@ typedef struct Gpt_ConfigType
 		uint32 GptChannelTickValueMax ;
 		Gpt_ModeType Mode;
 		void (*GptNotificationPtr)(void);
-
-
 
 }Gpt_ConfigType ;
 	

@@ -1,19 +1,15 @@
 #include "GPT.h"
 
 
-
 void Gpt_Init(const Gpt_ConfigType * TimerConfig)
 {
-	#if(PredegT==0)
 	GPT_REGISTERS * GPT= T_arr[TimerConfig[PredegT].GptChannelId];
-	#elif(PredegT!=0)
-	GPT_REGISTERS * GPT= T_arr [TimerConfig[PredegT].GptChannelId];
-	#endif
+
 	RCGCTIMER=0x3F;
 	GPT->GPTMCTL=0;
-	GPT->GPTMCFG=TimerConfig[PredegT].Mode;
+//	GPT->GPTMCFG=TimerConfig[PredegT].Mode;
 	GPT->GPTMTAMR=0x02;
-	GPT->GPTMTAPR=(uint8)(16000000/TimerConfig[PredegT].GptChannelTickFrequancy);
+	GPT->GPTMTAPR=0;
 	GPT->GPTMTAILR=TimerConfig[PredegT].GptChannelTickValueMax;
 	GPT->GPTMICR=1;
 	GPT->GPTMIMR|=1;
@@ -35,6 +31,7 @@ void Gpt_StartTimer(Gpt_ChannelType CH, Gpt_ValueType Value){
 		GPT_REGISTERS * GPT= T_arr [CH];
 
 	GPT->GPTMTAILR=Value;
+	uint32 x =GPT->GPTMTAILR ;
 	GPT->GPTMCTL|=1;
 
 }

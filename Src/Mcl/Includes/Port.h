@@ -112,7 +112,7 @@ typedef struct Port_ConfigType
 void Port_Init(const Port_ConfigType* ConfigPtr);
 
 
-extern const Port_ConfigType ConfigType[3];
+extern const Port_ConfigType ConfiType[3];
 
 
 #endif
